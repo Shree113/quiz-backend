@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url  # type: ignore # Make sure this is installed
+import dj_database_url  
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,7 +30,11 @@ SECRET_KEY = 'django-insecure-_8)x1!d^l(tbly^a2x!11fdqmh4hlt@vv+*zrkvk0f-h$5mr)f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['your-app-name.onrender.com', 'localhost']
+ALLOWED_HOSTS = [
+    'quiz-backend-2-tcqs.onrender.com',  # ✅ Add your Render domain here
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
