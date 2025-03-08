@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url  # Make sure this is installed
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -101,14 +102,7 @@ WSGI_APPLICATION = 'quiz_backend.wsgi.application'
 AUTH_USER_MODEL = 'users.CustomUser'
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'quiz__db',       # Database Name
-        'USER': 'root',          # MySQL Username
-        'PASSWORD': 's1h1r1e1e1a2',  # MySQL Password
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
 
 
