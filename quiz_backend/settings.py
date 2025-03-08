@@ -64,6 +64,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Allow frontend to connect
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
